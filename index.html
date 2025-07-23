@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>我同意了</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+  <h1>✅ 感谢你的同意</h1>
+  <p>你的选择已发送给我。</p>
+
+  <script>
+    // 初始化 EmailJS
+    emailjs.init("template_srdvlfvD"); // ← 替换为你的 user ID
+
+    // 发送“同意”邮件
+    emailjs.send("service_yktf2o8", "template_srdvlfv", {
+      choice: "✅ 对方已同意",
+    }).then(function(response) {
+      console.log("同意邮件已发送", response);
+    }, function(error) {
+      console.error("发送失败", error);
+    });
+  </script>
+</body>
+</html>
